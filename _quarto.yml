@@ -13,6 +13,9 @@ website:
       - href: about.qmd
         text: About
     right:
+      - icon: file-pdf
+        href: jep.pdf
+        text: PDF
       - icon: github
         href: https://github.com/tlamadon/abc-of-akm
 
@@ -24,4 +27,4 @@ format:
     theme: zephyr
     toc: true
     toc-depth: 3
-    code-fold: true
+    code-fold: false

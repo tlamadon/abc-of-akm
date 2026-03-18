@@ -39,8 +39,14 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      - name: Install TinyTeX
+        run: quarto install tinytex
+
       - name: Render site with Quarto
         run: quarto render
+
+      - name: Render PDF
+        run: quarto render jep.ipynb --to pdf --output jep.pdf && cp jep.pdf _site/jep.pdf
 
       - name: Upload Pages artifact
         if: github.ref == 'refs/heads/main'
