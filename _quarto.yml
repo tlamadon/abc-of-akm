@@ -4,12 +4,17 @@ project:
 
 website:
   title: "The ABC of AKM"
+  repo-url: https://github.com/tlamadon/abc-of-akm
+  repo-actions: [source, issue]
   navbar:
     left:
       - href: jep.ipynb
         text: Notebook
       - href: about.qmd
         text: About
+    right:
+      - icon: github
+        href: https://github.com/tlamadon/abc-of-akm
 
 format:
   html:
