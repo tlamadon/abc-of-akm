@@ -36,12 +36,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Cache Quarto
-        uses: actions/cache@v4
-        with:
-          path: /opt/quarto
-          key: quarto-${{ runner.os }}-1
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
