@@ -18,29 +18,28 @@ concurrency:
 jobs:
   run-notebook:
     runs-on: ubuntu-latest
+    container:
+      image: quay.io/jupyter/scipy-notebook:latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: "pip"
-
-      - name: Install Graphviz
-        run: sudo apt-get update && sudo apt-get install -y graphviz
-
-      - name: Install Python dependencies
+      - name: Install system dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          sudo apt-get update
+          sudo apt-get install -y graphviz
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
+      - name: Install remaining Python packages
+        run: pip install networkx graphviz
+
+      - name: Install Quarto
+        run: |
+          wget -qO quarto.deb https://github.com/quarto-dev/quarto-cli/releases/latest/download/quarto-linux-amd64.deb
+          sudo dpkg -i quarto.deb
+          rm quarto.deb
 
       - name: Install TinyTeX
-        run: quarto install tinytex
+        run: quarto install --no-prompt tinytex
 
       - name: Render site with Quarto
         run: quarto render
