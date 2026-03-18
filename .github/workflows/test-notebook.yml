@@ -39,9 +39,6 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Clear notebook outputs
-        run: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to notebook --inplace jep.ipynb
-
       - name: Render site with Quarto
         run: quarto render
 

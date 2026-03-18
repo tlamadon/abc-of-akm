@@ -16,6 +16,9 @@ website:
       - icon: github
         href: https://github.com/tlamadon/abc-of-akm
 
+execute:
+  enabled: true
+
 format:
   html:
     theme: zephyr
