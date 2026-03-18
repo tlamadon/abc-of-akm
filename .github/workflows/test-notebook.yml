@@ -46,7 +46,7 @@ jobs:
         run: quarto render
 
       - name: Render PDF
-        run: quarto render jep.ipynb --to pdf --output jep.pdf && cp jep.pdf _site/jep.pdf
+        run: quarto render jep.ipynb --to pdf --output jep.pdf
 
       - name: Upload Pages artifact
         if: github.ref == 'refs/heads/main'
