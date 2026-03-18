@@ -28,7 +28,7 @@ jobs:
       - name: Install system dependencies
         run: |
           apt-get update
-          apt-get install -y graphviz
+          apt-get install -y graphviz jq
 
       - name: Install remaining Python packages
         run: pip install networkx graphviz
