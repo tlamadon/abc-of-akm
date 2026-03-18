@@ -1,0 +1,8 @@
+numpy
+matplotlib
+seaborn
+scipy
+networkx
+pandas
+graphviz
+jupyter
