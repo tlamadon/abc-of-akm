@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "The ABC of AKM"
+  navbar:
+    left:
+      - href: jep.ipynb
+        text: Notebook
+      - href: about.qmd
+        text: About
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    code-fold: true

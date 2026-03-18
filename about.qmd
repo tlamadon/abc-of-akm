@@ -1,0 +1,15 @@
+---
+title: "About"
+---
+
+This is the companion notebook to the article:
+
+**"A Users Guide to Uncovering Worker and Firm Effects: The ABC of AKM"**
+by Stéphane Bonhomme, Thibaut Lamadon, and Elena Manresa, published in the *Journal of Economic Perspectives*.
+
+The notebook provides simple simulation examples to make concrete the different points developed in the paper.
+
+## Links
+
+- [Open in Google Colab](https://colab.research.google.com/github/tlamadon/abc-of-akm/blob/main/jep.ipynb)
+- [GitHub Repository](https://github.com/tlamadon/abc-of-akm)
