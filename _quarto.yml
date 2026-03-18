@@ -29,3 +29,5 @@ format:
     toc: true
     toc-depth: 3
     code-fold: false
+  pdf:
+    code-block-font-size: \scriptsize
