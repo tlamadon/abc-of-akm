@@ -1,10 +1,19 @@
-name: Test Notebook
+name: Test Notebook and Deploy
 
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   run-notebook:
@@ -27,5 +36,27 @@ jobs:
           pip install -r requirements.txt
           pip install nbconvert
 
-      - name: Run notebook
-        run: jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=600 jep.ipynb
+      - name: Execute and convert notebook to HTML
+        run: jupyter nbconvert --to html --execute --ExecutePreprocessor.timeout=600 jep.ipynb --output index.html
+
+      - name: Prepare site
+        run: mkdir -p _site && mv index.html _site/
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: run-notebook
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
