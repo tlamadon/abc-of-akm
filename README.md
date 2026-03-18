@@ -1,5 +1,7 @@
 # The ABC of AKM
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tlamadon/abc-of-akm/blob/main/jep.ipynb) [![View Notebook](https://img.shields.io/badge/View-Notebook-blue)](https://tlamadon.github.io/abc-of-akm/)
+
 Companion notebook to "A Users Guide to Uncovering Worker and Firm Effects: The ABC of AKM" by Bonhomme, Lamadon and Manresa for the Journal of Economic Perspectives.
 
 ## Running the notebook
