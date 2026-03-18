@@ -25,6 +25,7 @@ execute:
 format:
   html:
     theme: zephyr
+    css: custom.css
     toc: true
     toc-depth: 3
     code-fold: false

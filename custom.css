@@ -1,0 +1,4 @@
+/* Prevent uppercase transform on table headers (breaks math rendering) */
+th {
+  text-transform: none !important;
+}
